@@ -6,7 +6,7 @@ def main(page: ft.Page):
     page.title = "Login"
     
     # Agregar imagen de fondo
-    bg_image = ft.Image(src="assets/fondo_login.png", fit=ft.ImageFit.COVER, width=page.window.width, height=page.window.height)
+    bg_image = ft.Image(src="https://github.com/j0t4inc0de/my_login_flet/blob/main/assets/fondo_login.png", fit=ft.ImageFit.COVER, width=page.window.width, height=page.window.height)
     page.add(bg_image)
 
     login_text = ft.Text("Login", color='black', size=40, weight=ft.FontWeight.BOLD)
