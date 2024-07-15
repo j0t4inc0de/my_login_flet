@@ -1,44 +1,44 @@
 import flet as ft
 
-
 def main(page: ft.Page):
     page.window.width = 375
     page.window.height = 812
     page.title = "Login"
-    # page.bgcolor = "#ffffff"
     
-    # Funciones
     def iniciar_sesion(e):
-        print("\nSe apreto el boton 'Login'")
+        print("\nSe apretó el botón 'Login'")
+
     def registrar_usuario(e):
-        print("\nSe apreto el boton de registro")
+        print("\nSe apretó el botón de registro")
+        page.views.clear()
+        from views.registro import registro_main
+        page.go('/registro')
+
     def contrasena_olvidada(e):
-        print("\nSe apreto el boton de 'contraseña olvidada'")
-        
-    # Variables
+        print("\nSe apretó el botón de 'contraseña olvidada'")
+
     path_fondo_login = "https://github.com/j0t4inc0de/my_login_flet/releases/download/fondo/fondo_login.png"
     bg_image = ft.Image(src=path_fondo_login, fit=ft.ImageFit.COVER, width=page.window.width, height=page.window.height)
-    
     login_text = ft.Text("Login", color='black', size=40, weight=ft.FontWeight.BOLD)
     username = ft.TextField(label="Usuario", border_radius=15, width=300, filled=True, border_color="transparent", bgcolor="#8F8E8E")
     password = ft.TextField(label="Contraseña", password=True, border_radius=15, width=300, filled=True, border_color="transparent", bgcolor="#8F8E8E")
-    # Botones
+
     password_olvidada = ft.TextButton(
-        text="¿Se te olvido la contraseña?",
+        text="¿Se te olvidó la contraseña?",
         on_click=contrasena_olvidada,
         style=ft.ButtonStyle(
-        color="#000000",
-        bgcolor="#ffffff",
-        shape=ft.RoundedRectangleBorder(radius=10),
+            color="#000000",
+            bgcolor="#ffffff",
+            shape=ft.RoundedRectangleBorder(radius=10),
         ),
     )
     register_btn = ft.TextButton(
-        text="Registrate",
+        text="Regístrate",
         on_click=registrar_usuario,
         style=ft.ButtonStyle(
-        color="#000000",
-        bgcolor="#ffffff",
-        shape=ft.RoundedRectangleBorder(radius=10),
+            color="#000000",
+            bgcolor="#ffffff",
+            shape=ft.RoundedRectangleBorder(radius=10),
         ),
     )
     login_btn = ft.FilledButton(
@@ -52,6 +52,7 @@ def main(page: ft.Page):
             shape=ft.RoundedRectangleBorder(radius=10),
         ),
     )
+
     c1_container = ft.Container(
         content=login_text,
         alignment=ft.alignment.bottom_center,
@@ -73,7 +74,7 @@ def main(page: ft.Page):
         padding=15,
     )
     c1_columna = ft.Column(
-        [   
+        [
             c1_br,
             c1_container,
             c1_username,
@@ -85,11 +86,11 @@ def main(page: ft.Page):
         expand=True,
         horizontal_alignment=ft.CrossAxisAlignment.CENTER
     )
-    # Crear el stack y añadir los elementos
+
     stack = ft.Stack(
         [
-            bg_image,  # Imagen de fondo
-            c1_columna  # Formulario
+            bg_image,
+            c1_columna
         ],
         width=page.window.width,
         height=page.window.height
