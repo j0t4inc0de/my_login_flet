@@ -60,7 +60,6 @@ def main(page: ft.Page):
             c1_br
         ],
         expand=True,
-        alignment=ft.MainAxisAlignment.CENTER,
         horizontal_alignment=ft.CrossAxisAlignment.CENTER
     )
     # Crear el stack y añadir los elementos
